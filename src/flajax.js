@@ -1,6 +1,6 @@
 // module flajax
 
-import * as Task from 'data.task';
+import {default as Task} from 'data.task';
 
 const safeParse = xhr => {
   try {
@@ -10,7 +10,9 @@ const safeParse = xhr => {
   }
 }
 
-export function flajax(opts) {
+const setHeaders = (headers, xhr) => { return xhr; };
+
+export default function flajax(opts) {
   return new Task((reject, resolve) => {
 
     const onStateChange = xhr => function _onState() {
@@ -23,12 +25,11 @@ export function flajax(opts) {
     };
 
     var xhr = new XMLHttpRequest();
-    xhr.open(type, opts.url, true);
+    xhr.open(opts.method, opts.url, true);
     xhr.withCredentials = opts.hasOwnProperty('withCredentials');
-    setHeaders(xhr, opts.headers);
+    xhr = setHeaders(opts.headers, xhr);
     xhr.addEventListener('readystatechange', onStateChange(xhr), false);
     xhr.send();
-
   });
 };
 

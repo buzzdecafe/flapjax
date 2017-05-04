@@ -1,4 +1,4 @@
-(function (exports) {
+var flajax = (function () {
 'use strict';
 
 /**
@@ -354,13 +354,6 @@ Task$1.prototype.rejectedMap = function _rejectedMap(f) {
 
 var index = task;
 
-
-
-var Task = Object.freeze({
-	default: index,
-	__moduleExports: index
-});
-
 // module flajax
 
 const safeParse = xhr => {
@@ -371,8 +364,10 @@ const safeParse = xhr => {
   }
 };
 
+const setHeaders = (headers, xhr) => { return xhr; };
+
 function flajax(opts) {
-  return new Task((reject, resolve) => {
+  return new index((reject, resolve) => {
 
     const onStateChange = xhr => function _onState() {
       if (xhr.readyState === xhr.DONE) {
@@ -384,15 +379,14 @@ function flajax(opts) {
     };
 
     var xhr = new XMLHttpRequest();
-    xhr.open(type, opts.url, true);
+    xhr.open(opts.method, opts.url, true);
     xhr.withCredentials = opts.hasOwnProperty('withCredentials');
-    setHeaders(xhr, opts.headers);
+    xhr = setHeaders(opts.headers, xhr);
     xhr.addEventListener('readystatechange', onStateChange(xhr), false);
     xhr.send();
-
   });
 }
 
-exports.flajax = flajax;
+return flajax;
 
-}((this.flajax = this.flajax || {})));
+}());
