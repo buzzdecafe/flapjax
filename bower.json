@@ -1,12 +1,9 @@
 {
-  "name": "ajax",
-  "version": "0.0.10",
-  "homepage": "https://github.com/fdaciuk/ajax",
-  "authors": [
-    "Fernando Daciuk"
-  ],
-  "description": "Ajax module in Vanilla JS",
-  "main": "dist/ajax.min.js",
+  "name": "flajax",
+  "version": "0.0.1",
+  "homepage": "https://github.com/buzzdecafe/flajax",
+  "description": "Monadic Ajax module",
+  "main": "dist/flajax.min.js",
   "moduleType": [
     "amd",
     "globals",
@@ -15,9 +12,7 @@
   "keywords": [
     "ajax",
     "xhr",
-    "XMLHttpRequest",
-    "promises",
-    "promise"
+    "XMLHttpRequest"
   ],
   "license": "MIT",
   "ignore": [
