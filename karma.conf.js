@@ -8,15 +8,13 @@ module.exports = function (config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'es6-shim'],
 
     // list of files / patterns to load in the browser
     files: [
-      'src/ajax.js',
+      'dist/flajax.bundle.js',
       'node_modules/chai/chai.js',
-      'test/unit/ajax.test.js',
-      'test/unit/ajax-{get,post,put,delete}.test.js',
-      'test/unit/ajax-{get,post,put,delete}-promises.test.js'
+      'test/flajax.test.js'
     ],
 
     // list of files to exclude
