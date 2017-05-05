@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path');
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -8,6 +9,7 @@ const upload = multer({ dest: 'uploads/' })
 const app = express()
 
 const users = require('./data/users')
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -42,5 +44,12 @@ app.post('/api/formdata', upload.any(), (req, res) => {
 app.post('/api/getheader', (req, res) => {
   res.json({ header: req.get('content-type') })
 })
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/data/index.html'));
+});
+app.get('/flajax.bundle.js', function(req, res) {
+  res.sendFile(path.join(__dirname + '/../dist/flajax.bundle.js'));
+});
 
 exports = module.exports = app
