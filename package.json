@@ -4,6 +4,9 @@
   "description": "Monadic AJAX module",
   "version": "0.0.1",
   "main": "dist/flapjax.min.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "server": "node api",
