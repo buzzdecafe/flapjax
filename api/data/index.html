@@ -1,11 +1,11 @@
 <!doctype HTML>
 <html>
   <head>
-    <title>X</title>
-    <script src="flajax.bundle.js"></script>
+    <title>Flapjax</title>
+    <script src="flapjax.bundle.js"></script>
   </head>
   <body>
-    <h1>Flajax Demo</h1>
+    <h1>Flapjax Demo</h1>
 
     <div id="out"></div>
     <p><button id="maria">Maria's Name</button></p>
@@ -31,9 +31,9 @@
         const l = {method: 'GET', url: '/api/user/lazy', headers: {}};
 
         const tasks = {
-          maria: flajax(m).map(getResponse).map(prop('name')).map(h2),
-          paulo: flajax(p).map(getResponse).map(prop('age')).map(h2),
-          lazy: flajax(l).map(getResponse).map(prop('name')).map(h2),
+          maria: flapjax(m).map(getResponse).map(prop('name')).map(h2),
+          paulo: flapjax(p).map(getResponse).map(prop('age')).map(h2),
+          lazy: flapjax(l).map(getResponse).map(prop('name')).map(h2),
         }
         document.querySelectorAll('button').forEach(button => {
           button.addEventListener('click', function(e) {

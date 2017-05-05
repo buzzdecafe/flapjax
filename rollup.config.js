@@ -3,10 +3,10 @@ import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
-  entry: 'src/flajax.js',
-  dest: 'dist/flajax.bundle.js',
+  entry: 'src/flapjax.js',
+  dest: 'dist/flapjax.bundle.js',
   format: 'iife',
-  moduleName: 'flajax',
+  moduleName: 'flapjax',
   plugins: [
     nodeResolve({
       jsnext: true,

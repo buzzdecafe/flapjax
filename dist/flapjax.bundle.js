@@ -1,4 +1,4 @@
-var flajax = (function () {
+var flapjax = (function () {
 'use strict';
 
 /**

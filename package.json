@@ -1,20 +1,20 @@
 {
-  "name": "flajax",
-  "description": "Ajax module in Vanilla JS",
+  "name": "flapjax",
+  "description": "Monadic AJAX module",
   "version": "0.0.1",
-  "main": "dist/ajax.min.js",
+  "main": "dist/flapjax.min.js",
   "scripts": {
     "build": "rollup -c",
     "server": "node api",
     "test": "concurrently --kill-others --success=first 'node api/index.js' 'karma start --single-run'",
-    "test:watch": "concurrently --kill-others 'node api/index.js' 'gulp'"
+    "test:watch": "concurrently --kill-others 'node api/index.js' 'karma start --single-run=false'"
   },
   "directories": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buzzdecafe/flajax.git"
+    "url": "git+https://github.com/buzzdecafe/flapjax.git"
   },
   "keywords": [
     "ajax",
@@ -23,16 +23,19 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/buzzdecafe/flajax/issues"
+    "url": "https://github.com/buzzdecafe/flapjax/issues"
   },
-  "homepage": "https://github.com/buzzdecafe/flajax",
+  "homepage": "https://github.com/buzzdecafe/flapjax",
   "standard": {
     "globals": [
       "describe",
       "it",
       "beforeEach",
       "define",
-      "XMLHttpRequest"
+      "XMLHttpRequest",
+      "AJAX",
+      "monad",
+      "functional programming"
     ]
   },
   "dependencies": {
@@ -44,12 +47,6 @@
     "concurrently": "^2.1.0",
     "cors": "^2.7.1",
     "express": "^4.13.4",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-header": "^1.7.1",
-    "gulp-mocha-phantomjs": "^0.11.0",
-    "gulp-standardize": "^1.1.0",
-    "gulp-uglify": "^1.5.3",
     "karma": "^0.13.21",
     "karma-coverage": "^0.5.4",
     "karma-es6-shim": "^1.0.0",

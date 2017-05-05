@@ -20,7 +20,7 @@ const id = x => x;
 // }
 //
 // flajax :: (Object. (XHR -> XHR)) -> Task ((a -> ()), (b -> ())) -> ()
-export default function flajax(opts, dec) {
+export default function flapjax(opts, dec) {
   const decorator = dec || id;
   return new Task((reject, resolve) => {
 
