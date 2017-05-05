@@ -1,5 +1,6 @@
 {
   "name": "flapjax",
+  "author": "Michael Hurley <mh@buzzdecafe.com> (buzzdecafe.com)",
   "description": "Monadic AJAX module",
   "version": "0.0.1",
   "main": "dist/flapjax.min.js",
@@ -18,8 +19,10 @@
   },
   "keywords": [
     "ajax",
-    "xmlhttprequest",
-    "xhr"
+    "functional",
+    "monad",
+    "xhr",
+    "xmlhttprequest"
   ],
   "license": "MIT",
   "bugs": {
@@ -32,16 +35,15 @@
       "it",
       "beforeEach",
       "define",
-      "XMLHttpRequest",
-      "AJAX",
-      "monad",
-      "functional programming"
+      "XMLHttpRequest"
     ]
   },
   "dependencies": {
     "data.task": "^3.1.1"
   },
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
     "body-parser": "^1.15.0",
     "chai": "^3.5.0",
     "concurrently": "^2.1.0",
@@ -56,8 +58,12 @@
     "mocha": "^2.4.5",
     "multer": "^1.1.0",
     "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "standard-format": "^2.1.1"
+    "rollup-plugin-uglify": "^1.0.2",
+    "standard-format": "^2.1.1",
+    "uglify": "^0.1.5",
+    "xyz": "^2.1.0"
   }
 }

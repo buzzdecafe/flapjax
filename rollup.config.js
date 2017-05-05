@@ -1,10 +1,13 @@
 // rollup.config.js
+import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import uglify from 'rollup-plugin-uglify';
+
 
 export default {
   entry: 'src/flapjax.js',
-  dest: 'dist/flapjax.bundle.js',
+  dest: 'dist/flapjax.min.js',
   format: 'iife',
   moduleName: 'flapjax',
   plugins: [
@@ -12,7 +15,6 @@ export default {
       jsnext: true,
       main: true
     }),
-
     commonjs({
       // non-CommonJS modules will be ignored, but you can also
       // specifically include/exclude files
@@ -37,6 +39,10 @@ export default {
       // or a `id => boolean` function. Only use this
       // option if you know what you're doing!
       //ignore: [ 'conditional-runtime-dependency' ]
-    })
+    }),
+    babel({
+      exclude: 'node_modules/**'
+    }),
+    uglify()
   ]
 };

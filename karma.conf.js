@@ -12,9 +12,9 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'dist/flajax.bundle.js',
+      'dist/flapjax.min.js',
       'node_modules/chai/chai.js',
-      'test/flajax.test.js'
+      'test/flapjax.test.js'
     ],
 
     // list of files to exclude

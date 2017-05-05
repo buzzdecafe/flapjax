@@ -48,8 +48,8 @@ app.post('/api/getheader', (req, res) => {
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/data/index.html'));
 });
-app.get('/flapjax.bundle.js', function(req, res) {
-  res.sendFile(path.join(__dirname + '/../dist/flapjax.bundle.js'));
+app.get('/flapjax.min.js', function(req, res) {
+  res.sendFile(path.join(__dirname + '/../dist/flapjax.min.js'));
 });
 
 exports = module.exports = app
