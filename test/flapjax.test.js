@@ -1,4 +1,4 @@
-;(function (expect, flajax) {
+;(function (expect, flapjax) {
   'use strict'
 
   var getMaria = {
@@ -13,11 +13,11 @@
 
   describe('Flajax', function() {
     it('exists', function() {
-      expect(flajax).to.be.a.function;
+      expect(flapjax).to.be.a.function;
     });
 
     it('takes options and a decorator function and returns a Task', function() {
-      expect(flajax(getMaria, id)).to.be.an.object;
+      expect(flapjax(getMaria, id)).to.be.an.object;
     });
   });
-})(window.chai.expect, window.flajax);
+})(window.chai.expect, window.flapjax);

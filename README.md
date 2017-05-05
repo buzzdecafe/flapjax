@@ -1,4 +1,6 @@
-# Ajax
+# Flapjax
 
-> Monadic Ajax module in Vanilla JS
+Monadic Ajax module
+
+
 
