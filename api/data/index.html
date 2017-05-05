@@ -6,5 +6,43 @@
   </head>
   <body>
     <h1>Flajax Demo</h1>
+
+    <div id="out"></div>
+    <p><button id="maria">Maria's Name</button></p>
+    <p><button id="paulo">Paulo's Age</button></p>
+    <p><button id="lazy">Lazy's Name</button></p>
+
+    <script>
+      (function() {
+        const prop = k => o => o[k];
+        const comp = (f, g) => x => f(g(x));
+        const safeParse = s => { 
+          try { return JSON.parse(s); } catch (e) { return {}; }
+        };
+        const h2 = x => '<h2>' + x + '</h2>';
+        const getResponse = comp(safeParse, prop('responseText'));
+
+        const out = document.getElementById('out');
+        const writeOut = s => out.innerHTML = s;
+        const onErr = x => console.error('BOOM!', x);
+
+        const m = {method: 'GET', url: '/api/user/maria', headers: {}};
+        const p = {method: 'GET', url: '/api/user/paulo', headers: {}};
+        const l = {method: 'GET', url: '/api/user/lazy', headers: {}};
+
+        const tasks = {
+          maria: flajax(m).map(getResponse).map(prop('name')).map(h2),
+          paulo: flajax(p).map(getResponse).map(prop('age')).map(h2),
+          lazy: flajax(l).map(getResponse).map(prop('name')).map(h2),
+        }
+        document.querySelectorAll('button').forEach(button => {
+          button.addEventListener('click', function(e) {
+            out.innerHTML = '<img src="http://www.huntington.org/images/loader.gif" />';
+            tasks[button.id].fork(onErr, writeOut);
+          });
+        });
+
+      }());
+    </script>
   </body>
 </html>
