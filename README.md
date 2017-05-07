@@ -15,10 +15,10 @@ Monadic Ajax module
 // }
 
 // flapjax :: Config -> (XHR -> XHR)? -> Task (&alpha;, &beta;)
-const task = flapjax(config [, decorator]);
+const future = flapjax(config [, decorator]);
 ```
 
-To use the task, please review the [Task API](http://origamitower.github.io/folktale/en/folktale.data.task.html).
+To use the `future`, please review the [Fluture API](https://github.com/fluture-js/Fluture)
 
 
 

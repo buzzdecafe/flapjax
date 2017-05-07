@@ -1,7 +1,6 @@
 // module flajax
 
-import {default as Task} from 'data.task';
-
+import Future from 'fluture/es5';
 
 const setHeaders = (headers, xhr) => { 
   Object.keys(headers).forEach(k => {
@@ -22,7 +21,7 @@ const id = x => x;
 // flajax :: (Object. (XHR -> XHR)) -> Task ((a -> ()), (b -> ())) -> ()
 export default function flapjax(opts, dec) {
   const decorator = dec || id;
-  return new Task((reject, resolve) => {
+  return new Future((reject, resolve) => {
 
     const onStateChange = xhr => function _onState() {
       if (xhr.readyState === xhr.DONE) {
