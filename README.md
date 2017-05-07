@@ -6,15 +6,24 @@ Monadic Ajax module
 
 ```js
 // type Config = {
-//   method: String
-//   url: String
-//   ...
-//   headers: {
-//     String : String
+//   url : String,
+//   method : String,
+//   responseType [OPTIONAL] : String
+//   timeout [OPTIONAL] : Number,
+//   withCredentials [OPTIONAL] : Bool | undefined
+//   headers [OPTIONAL] : { String : String }  
+//   events [OPTIONAL] : { 
+//     loadstart : (Event) -> (),
+//     progress : (Event) -> (),
+//     abort : (Event) -> (),
+//     error : (Event) -> (),
+//     load : (Event) -> (),
+//     timeout : (Event) -> (),
+//     loadend : (Event) -> (),
 //   }
 // }
-
-// flapjax :: Config -> (XHR -> XHR)? -> Task (&alpha;, &beta;)
+//
+// flapjax :: (Config &#x29d8;, (XHR -> XHR)&#x29d9;?) -> Future (&alpha;, &beta;)
 const future = flapjax(config [, decorator]);
 ```
 
