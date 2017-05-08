@@ -23,7 +23,7 @@ Monadic Ajax module
 //   }
 // }
 //
-// flapjax :: (Config &#x29d8;, (XHR -> XHR)&#x29d9;?) -> Future (&alpha;, &beta;)
+// flapjax :: (Config <, (XHR -> XHR)>?) -> Future (&alpha;, &beta;)
 const future = flapjax(config [, decorator]);
 ```
 
