@@ -31,27 +31,8 @@ const setEvents = (events, xhr) => {
 const id = x => x;
 
 
-// type opts = {
-//   url : String,
-//   method : String,
-//   timeout : Number,
-//   withCredentials : Bool | undefined
-//   ...
-//   headers : { String : String }
-//   events : { 
-//     loadstart : Function (Event) -> (),
-//     progress : Function (Event) -> (),
-//     abort : Function (Event) -> (),
-//     error : Function (Event) -> (),
-//     load : Function (Event) -> (),
-//     timeout : Function (Event) -> (),
-//     loadend : Function (Event) -> (),
-//   }
-// }
-//
-// flajax :: (Object. (XHR -> XHR)) -> Task ((a -> ()), (b -> ())) -> ()
-export default function flapjax(opts, dec) {
-  const decorator = dec || id;
+// flajax :: Object -> Future XHR
+export default function flapjax(opts) {
   return new Future((reject, resolve) => {
 
     const onStateChange = xhr => function _onState() {
@@ -71,7 +52,6 @@ export default function flapjax(opts, dec) {
     xhr = setHeaders(opts.headers || {}, xhr);
     xhr = setEvents(opts.events || {}, xhr);
     xhr.addEventListener('readystatechange', onStateChange(xhr), false);
-    xhr = decorator(xhr);
     xhr.send();
   });
 };
