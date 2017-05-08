@@ -10,7 +10,7 @@ Monadic Ajax module
 //   method : String,
 //   responseType [OPTIONAL] : String
 //   timeout [OPTIONAL] : Number,
-//   withCredentials [OPTIONAL] : Bool | undefined
+//   withCredentials [OPTIONAL] : Bool
 //   headers [OPTIONAL] : { String : String }  
 //   events [OPTIONAL] : { 
 //     loadstart : (Event) -> (),
@@ -23,8 +23,8 @@ Monadic Ajax module
 //   }
 // }
 //
-// flapjax :: (Config <, (XHR -> XHR)>?) -> Future (&alpha;, &beta;)
-const future = flapjax(config [, decorator]);
+// flapjax :: Config -> Future XHR
+const future = flapjax(config);
 ```
 
 To use the `future`, please review the [Fluture API](https://github.com/fluture-js/Fluture)
