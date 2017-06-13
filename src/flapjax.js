@@ -53,6 +53,12 @@ export default function flapjax(opts) {
     xhr = setEvents(opts.events || {}, xhr);
     xhr.addEventListener('readystatechange', onStateChange(xhr), false);
     xhr.send();
+    
+    return () => {
+      if (xhr.readyState < xhr.DONE) {
+        xhr.abort();
+      }
+    };
   });
 };
 
