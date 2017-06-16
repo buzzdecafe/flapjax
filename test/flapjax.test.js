@@ -19,11 +19,7 @@
     it('takes options and returns a Future', function() {
       var future = flapjax(maria);
       expect(future).to.be.an.object;
-      ['fork', 'cleanup', 'ap', 'bimap', 'cata', 'chain', 'concat',
-       'empty', 'fold', 'map', 'of', 'orElse', 'rejected',
-       'rejectedMap', 'swap'].forEach(function(method) {
-        expect(task[method]).to.be.a.function;
-      });
+      expect(future.constructor['@@type']).to.equal("fluture/Future");
     });
     
     it('', function() {
