@@ -8,6 +8,7 @@ Monadic Ajax module
 // type Config = {
 //   url : String,
 //   method : String,
+//   body [OPTIONAL] : String,
 //   responseType [OPTIONAL] : String
 //   timeout [OPTIONAL] : Number,
 //   withCredentials [OPTIONAL] : Bool
